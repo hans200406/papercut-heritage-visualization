@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>纸上生花课程成果总览海报</title>
+    <link rel="stylesheet" href="styles/poster.css">
+  </head>
+  <body>
+    <div class="poster-preview">
+      <div class="poster-frame">
+        <main class="poster" aria-label="纸上生花课程成果总览海报">
+          <section class="hero">
+            <div class="hero-copy">
+              <p class="eyebrow">数字遗珍 · 中国剪纸</p>
+              <h1>纸上生花</h1>
+              <p class="subtitle">中国剪纸非遗多维信息可视化设计</p>
+              <p class="statement">以真实非遗名录数据为骨架，连接地域分布、保护批次与文化纹样，用数据图表和生成艺术共同呈现剪纸文化的当代表达。</p>
+            </div>
+            <div class="papercut-mark" aria-hidden="true">
+              <span></span>
+            </div>
+          </section>
+
+          <section class="metrics" aria-label="核心数据概览">
+            <article>
+              <strong>54</strong>
+              <span>54 个剪纸类项目</span>
+            </article>
+            <article>
+              <strong>22</strong>
+              <span>22 个省级地区</span>
+            </article>
+            <article>
+              <strong>40%</strong>
+              <span>40% 模块 A 权重</span>
+            </article>
+          </section>
+
+          <section class="findings" aria-label="数据发现">
+            <div class="section-title">
+              <span>数据洞察</span>
+              <h2>从非遗名录中读出三条线索</h2>
+            </div>
+            <article>
+              <h3>地域分布呈现聚集</h3>
+              <p>剪纸项目覆盖多个省级地区，北方传统剪纸与东部民俗区域形成较明显的项目集中。</p>
+            </article>
+            <article>
+              <h3>第二批扩展最集中</h3>
+              <p>保护批次中第二批项目数量占比最高，反映剪纸类项目在早期非遗保护体系中的集中补充。</p>
+            </article>
+            <article>
+              <h3>民族纹样表达丰富</h3>
+              <p>关键词中出现“花鸟、吉祥、团花、民族纹样”等高频特征，体现剪纸图形的文化多样性。</p>
+            </article>
+          </section>
+
+          <section class="modules" aria-label="模块成果展示">
+            <div class="section-title">
+              <span>成果模块</span>
+              <h2>数据、图形与叙事的完整整合</h2>
+            </div>
+            <article class="module module-a">
+              <div class="module-text">
+                <span>模块 A</span>
+                <h3>非遗数据分析信息可视化设计</h3>
+                <p>使用 ECharts 构建地区分布、批次结构与关键词频次图表，完成数据驱动的可视分析。</p>
+              </div>
+              <img src="screenshots/module_a_data_analysis.png" alt="模块 A 数据分析页面截图">
+            </article>
+            <article class="module module-b">
+              <div class="module-text">
+                <span>模块 B</span>
+                <h3>剪纸图形艺术信息可视化设计</h3>
+                <p>使用 p5.js 将团花、花鸟、吉祥纹等纹样抽象为可交互生成的剪纸图形。</p>
+              </div>
+              <img src="screenshots/module_b_papercut_art_focus.png" alt="模块 B 剪纸生成艺术页面截图">
+            </article>
+            <article class="module module-c">
+              <div class="module-text">
+                <span>模块 C</span>
+                <h3>文化叙事与交互整合设计</h3>
+                <p>通过滚动叙事把数据分析与生成图形串联成完整的非遗信息可视化作品。</p>
+              </div>
+              <img src="screenshots/module_c_story_focus.png" alt="模块 C 文化叙事整合页面截图">
+            </article>
+          </section>
+
+          <footer class="footer">
+            <div>
+              <strong>《信息可视化》课程设计</strong>
+              <span>主题：纸上生花 · 中国剪纸非遗多维信息可视化设计</span>
+            </div>
+            <p>数据来源：中国非物质文化遗产网公开名录整理；表现形式：HTML / CSS / ECharts / p5.js。</p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script>
+      function fitPosterPreview() {
+        const preview = document.querySelector('.poster-preview');
+        if (!preview) return;
+
+        const isExport = new URLSearchParams(window.location.search).get('export') === '1';
+        if (isExport) {
+          preview.style.setProperty('--poster-scale', '1');
+          document.documentElement.classList.add('export-mode');
+          return;
+        }
+
+        const margin = 48;
+        const scale = Math.min(
+          (window.innerWidth - margin) / 1080,
+          (window.innerHeight - margin) / 1920,
+          1
+        );
+        preview.style.setProperty('--poster-scale', Math.max(scale, 0.1).toFixed(4));
+      }
+
+      window.addEventListener('resize', fitPosterPreview);
+      fitPosterPreview();
+    </script>
+  </body>
+</html>

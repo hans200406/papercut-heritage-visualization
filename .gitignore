@@ -1,0 +1,6 @@
+report_render/
+report_pdf_render/
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

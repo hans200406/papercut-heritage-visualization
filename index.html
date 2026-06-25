@@ -1,0 +1,130 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>纸上生花：中国剪纸非遗多维信息可视化设计</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="页面导航">
+    <a href="#top">开场</a>
+    <a href="#module-a">数据分析</a>
+    <a href="#story">叙事逻辑</a>
+    <a href="#module-b">生成艺术</a>
+    <a href="#closing">总结</a>
+  </nav>
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">数字遗珍 · 中国剪纸</p>
+        <h1>纸上生花</h1>
+        <p class="subtitle">以真实非遗名录数据勾勒剪纸的地域分布、保护批次与文化谱系，用数据进入传统手艺的纹理。</p>
+      </div>
+      <div class="paper-cut-mark" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <a class="scroll-cue" href="#module-a">向下阅读数据脉络</a>
+
+<section class="intro section-band" id="module-a">
+      <div class="section-title">
+        <p class="eyebrow">模块A</p>
+        <h2>非遗数据分析信息可视化设计</h2>
+      </div>
+      <p>本模块整理国家级非遗名录中与剪纸、刻纸、凿花、过门笺相关的传统美术项目，共 54 条记录。数据用于观察中国剪纸项目的地域集聚、批次扩展与民族文化多样性。</p>
+    </section>
+
+    <section class="stats-grid" aria-label="数据概览">
+      <article class="stat-card">
+        <strong id="totalProjects">54</strong>
+        <span>剪纸类项目</span>
+      </article>
+      <article class="stat-card">
+        <strong id="provinceCount">0</strong>
+        <span>覆盖省级地区</span>
+      </article>
+      <article class="stat-card">
+        <strong>40%</strong>
+        <span>模块A权重</span>
+      </article>
+    </section>
+
+    <section class="chart-section">
+      <div class="chart-copy">
+        <p class="eyebrow">地理分布</p>
+        <h2>剪纸项目在哪些地方更集中？</h2>
+        <p>按省级地区统计项目数量，观察剪纸类非遗在北方民俗区、东部沿海和多民族地区的分布差异。</p>
+      </div>
+      <div class="chart-panel"><div id="provinceChart" class="chart"></div></div>
+    </section>
+
+    <section class="chart-section two-column">
+      <div class="chart-panel"><div id="batchChart" class="chart"></div></div>
+      <div class="chart-copy">
+        <p class="eyebrow">批次结构</p>
+        <h2>第二批扩展是集中认定阶段</h2>
+        <p>不同批次反映保护名录不断细分和补充的过程。剪纸类项目在第二批扩展名录中数量最多，说明地方性剪纸样式逐渐被系统纳入保护。</p>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <div class="chart-copy">
+        <p class="eyebrow">地域谱系</p>
+        <h2>省份、民族与纹样关键词共同构成文化地图</h2>
+        <p>将省份数量与代表性关键词关联，可为后续模块B的剪纸纹样生成提供视觉来源。</p>
+      </div>
+      <div class="chart-panel"><div id="regionChart" class="chart"></div></div>
+    </section>
+
+    <section class="insights section-band">
+      <div class="section-title">
+        <p class="eyebrow">数据洞察</p>
+        <h2>从名录中读出的三条发现</h2>
+      </div>
+      <div id="insightList" class="insight-list"></div>
+    </section>
+
+
+    <section class="story-bridge" id="story">
+      <div>
+        <p class="eyebrow">叙事逻辑</p>
+        <h2>先看见分布，再进入纹样</h2>
+      </div>
+      <p>页面先以名录数据呈现中国剪纸的保护格局：哪些地区更集中、哪些批次扩展最明显、哪些关键词构成视觉谱系。随后进入生成艺术模块，将“窗花、花鸟、吉祥、民族纹样”等数据关键词转译为对称、镂空、红色的剪纸视觉语言。</p>
+    </section>
+    <section class="art-section" id="module-b">
+      <div class="art-copy">
+        <p class="eyebrow">模块B</p>
+        <h2>剪纸图形艺术信息可视化设计</h2>
+        <p>从数据中的“窗花、花鸟、吉祥、民族纹样”等关键词出发，用 p5.js 将剪纸的对称、镂空和红色民俗意象重构为可交互生成图形。</p>
+        <div class="art-controls" id="motifButtons" aria-label="纹样选择">
+          <button type="button" data-motif="petal" class="active">团花</button>
+          <button type="button" data-motif="bird">花鸟</button>
+          <button type="button" data-motif="auspicious">吉祥纹</button>
+        </div>
+        <label class="slider-label" for="complexitySlider">纹样复杂度 <span id="complexityValue">7</span></label>
+        <input id="complexitySlider" type="range" min="4" max="12" value="7">
+      </div>
+      <div class="art-stage">
+        <div id="artCanvas"></div>
+      </div>
+    </section>
+
+    <section class="closing-section" id="closing">
+      <p class="eyebrow">文化保护</p>
+      <h2>数字技术让剪纸被看见</h2>
+      <p>剪纸不只是一张红纸上的图案，也是一套关于节庆、地域、民族与生活愿望的知识系统。通过数据可视化和生成艺术，传统纹样被重新组织为可阅读、可交互、可传播的数字文化体验。</p>
+    </section>
+  </main>
+
+  <script src="libs/echarts.min.js"></script>
+  <script src="libs/p5.min.js"></script>
+  <script src="data/papercutData.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/papercut-art.js"></script>
+</body>
+</html>
+
+
