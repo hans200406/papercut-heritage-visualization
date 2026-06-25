@@ -35,7 +35,7 @@ http://127.0.0.1:8771/index.html
 - `scripts/papercut-art.js`：模块 B 生成艺术逻辑。
 - `data/heritage_papercut_projects.csv`：清洗后的剪纸非遗数据集。
 - `data/raw_heritage_papercut_projects.csv`：原始整理表与来源留痕表。
-- `data/raw_source_notes.md`：原始数据来源与清洗说明。
+- `data/data_cleaning_process.docx`：原始数据来源与清洗过程说明。
 - `design_report_papercut.pdf`：课程设计说明书 PDF。
 - `poster_course_showcase.png`：1080 × 1920 成果展示海报。
 
